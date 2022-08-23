@@ -1,0 +1,9 @@
+{
+    "npmScope": "backups",
+    "affected": {
+        "defaultBase": "master"
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/react"
+    }
+}

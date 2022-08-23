@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "projects": {
+        "@api/elemental": "libs/@api/elemental",
+        "@api/io-model": "libs/@api/io-model",
+        "@api/utilities": "libs/@api/utilities",
+        "backups": "apps/backups",
+        "cli": "apps/cli",
+        "website": "apps/website"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "root": "libs/@api/io-model",
+    "sourceRoot": "libs/@api/io-model/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/@api/io-model",
+                "tsConfig": "libs/@api/io-model/tsconfig.lib.json",
+                "packageJson": "libs/@api/io-model/package.json",
+                "main": "libs/@api/io-model/src/index.ts",
+                "assets": ["libs/@api/io-model/*.md"]
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/@api/io-model/**/*.ts"]
+            }
+        }
+    },
+    "tags": []
+}

@@ -1,0 +1,32 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "rootDirs": ["."],
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "esModuleInterop": true,
+        "typeRoots": ["node_modules/@types"],
+        "types": ["jest"],
+        "lib": ["es2017", "dom", "ESNext.AsyncIterable"],
+        "skipLibCheck": false,
+        "skipDefaultLibCheck": false,
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
+        "strictPropertyInitialization": false,
+        "noErrorTruncation": true,
+        "baseUrl": ".",
+        "paths": {
+            "@api/elemental": ["libs/@api/elemental/src/index.ts"],
+            "@api/io-model": ["libs/@api/io-model/src/index.ts"],
+            "@api/utilities": ["libs/@api/utilities/src/index.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
+}

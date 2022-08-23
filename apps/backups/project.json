@@ -1,0 +1,57 @@
+{
+    "root": "apps/backups",
+    "sourceRoot": "apps/backups/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/node:webpack",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/backups",
+                "main": "apps/backups/src/main.ts",
+                "tsConfig": "apps/backups/tsconfig.app.json",
+                "assets": ["apps/backups/src/assets"]
+            },
+            "configurations": {
+                "local": {
+                    "optimization": false,
+                    "extractLicenses": false,
+                    "inspect": false
+                },
+                "remote": {
+                    "optimization": true,
+                    "extractLicenses": true,
+                    "inspect": false,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/backups/src/environments/environment.ts",
+                            "with": "apps/backups/src/environments/environment.prod.ts"
+                        }
+                    ]
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/node:node",
+            "options": {
+                "buildTarget": "backups:build"
+            },
+            "configurations": {
+                "local": {
+                    "buildTarget": "backups:build:local"
+                },
+                "remote": {
+                    "buildTarget": "backups:build:remote"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/backups/**/*.ts"]
+            }
+        }
+    },
+    "tags": []
+}
